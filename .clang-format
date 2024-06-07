@@ -10,8 +10,8 @@ TabWidth: 4
 SpacesBeforeTrailingComments: 2
 SpaceBeforeParens: Never
 
-# 不允许短函数放在一行
-AllowShortFunctionsOnASingleLine: false
+# 允许短函数放在一行
+AllowShortFunctionsOnASingleLine: true
 
 # 一行最多120个字符
 ColumnLimit: 120
