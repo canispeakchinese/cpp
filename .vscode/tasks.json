@@ -12,7 +12,8 @@
                 "${fileDirname}/${fileBasenameNoExtension}.out",
                 "-lboost_system",
                 "-lboost_coroutine",
-                "-lboost_context"
+                "-lboost_context",
+                "-I/home/liutun/my_code/cpp/task_flow/taskflow"
             ],
             "options": {
                 "cwd": "${fileDirname}"
@@ -38,7 +39,8 @@
                 "${fileDirname}/${fileBasenameNoExtension}.out",
                 "-lboost_system",
                 "-lboost_coroutine",
-                "-lboost_context"
+                "-lboost_context",
+                "-I/home/liutun/my_code/cpp/task_flow/taskflow"
             ],
             "options": {
                 "cwd": "${fileDirname}"
