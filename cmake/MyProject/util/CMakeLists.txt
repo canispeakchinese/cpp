@@ -1,0 +1,1 @@
+add_library(util SHARED util.cpp)  # 生成动态库

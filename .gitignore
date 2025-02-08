@@ -34,5 +34,8 @@
 # Debug files
 *.dSYM
 
+# build result
+build
+
 # third-party files
 /task_flow/taskflow

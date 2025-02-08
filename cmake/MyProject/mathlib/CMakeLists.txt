@@ -1,0 +1,1 @@
+add_library(mathlib STATIC mathlib.cpp)  # 生成静态库
