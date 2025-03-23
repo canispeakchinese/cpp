@@ -1,17 +1,1 @@
-# 指定格式化样式，可以根据个人偏好选择不同的样式
-BasedOnStyle: LLVM
-
-# 缩进风格
-IndentWidth: 4
-UseTab: Never
-TabWidth: 4
-
-# 空格
-SpacesBeforeTrailingComments: 2
-SpaceBeforeParens: Never
-
-# 允许短函数放在一行
-AllowShortFunctionsOnASingleLine: true
-
-# 一行最多120个字符
-ColumnLimit: 120
+/home/liutun/my_code/configs/cpp/.clang-format
