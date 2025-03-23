@@ -1,5 +1,4 @@
 #include <iostream>
-#include <algorithm>
 #include <map>
 #include <set>
 #include <vector>
@@ -7,10 +6,10 @@
 using namespace std;
 
 class Solution {
-private:
-    bool intersect(vector<map<int, bool>>& records, int a, int b, int k) {
+  private:
+    bool intersect(vector<map<int, bool>> &records, int a, int b, int k) {
         int count = 0;
-        for (const auto& pair : records[a]) {
+        for(const auto &pair : records[a]) {
             if(records[b].find(pair.first) != records[b].end()) {
                 count++;
             }
@@ -18,12 +17,12 @@ private:
         return count >= k;
     }
 
-public:
-    int numberOfComponents(vector<vector<int>>&& properties, int k) {
+  public:
+    int numberOfComponents(vector<vector<int>> &&properties, int k) {
         vector<map<int, bool>> records;
-        for(int i=0; i<properties.size(); i++) {
+        for(int i = 0; i < properties.size(); i++) {
             map<int, bool> record;
-            for(auto v :properties[i]) {
+            for(auto v : properties[i]) {
                 record[v] = true;
             }
             records.push_back(record);
@@ -31,10 +30,10 @@ public:
 
         vector<int> res;
         vector<vector<int>> edges;
-        for(int i=0; i<properties.size(); i++) {
+        for(int i = 0; i < properties.size(); i++) {
             res.push_back(0);
             vector<int> edge;
-            for (int j=0; j<properties.size(); j++) {
+            for(int j = 0; j < properties.size(); j++) {
                 if(i == j) {
                     continue;
                 }
@@ -47,15 +46,15 @@ public:
 
         int count = 0;
 
-        for(int i=0; i<properties.size(); i++) {
-            if(res[i]==0) {
-                res[i]=++count;
+        for(int i = 0; i < properties.size(); i++) {
+            if(res[i] == 0) {
+                res[i] = ++count;
                 set<int> s;
                 vector<int> ve;
                 s.insert(i);
                 ve.push_back(i);
-                for(int j=0; j<ve.size(); j++) {
-                    for(auto v:edges[ve[j]]) {
+                for(int j = 0; j < ve.size(); j++) {
+                    for(auto v : edges[ve[j]]) {
                         res[v] = res[i];
                         if(s.find(v) == s.end()) {
                             s.insert(v);

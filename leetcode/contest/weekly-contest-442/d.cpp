@@ -1,6 +1,4 @@
-#include <algorithm>
 #include <iostream>
-#include <map>
 #include <vector>
 
 using namespace std;
@@ -23,13 +21,11 @@ class Solution {
                     ans += (long long)(p.first - l + 1) * (long long)p.second;
                 } else {
                     // 计算上从上个循环到这个循环的数字数量*操作次数
-                    ans += (long long)(p.first + 1 - (p.first + 1) / 4) * (long long)p.second;
+                    ans += (long long)(p.first - ((p.first + 1) / 4 - 1)) * (long long)p.second;
                     // cout << ans << endl;
                     // 如果右边小于等于了，则减掉差值*操作次数
                     if(r <= p.first) {
-                        ans = ans - (long long)(p.first - r) * (long long)p.second;
-                        // cout << ans << endl;
-                        return ans;
+                        return ans - (long long)(p.first - r) * (long long)p.second;
                     }
                 }
             }
