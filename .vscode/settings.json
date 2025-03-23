@@ -112,5 +112,8 @@
         "unordered_map": "cpp",
         "variant": "cpp",
         "algorithm": "cpp"
-    }
+    },
+    "C_Cpp.intelliSenseEngine": "Tag Parser",
+    "C_Cpp.intelliSenseEngineFallback": "Disabled",
+    "C_Cpp.codeAnalysis.runAutomatically": false
 }
