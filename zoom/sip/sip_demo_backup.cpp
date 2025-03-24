@@ -1,6 +1,5 @@
 #include <iostream>
 #include <pjsua2.hpp>
-#include <thread>
 
 using namespace pj;
 
@@ -16,6 +15,25 @@ class MyCall : public Call {
 
         if(ci.state == PJSIP_INV_STATE_CONFIRMED) {
             std::cout << "通话已建立，开始媒体传输" << std::endl;
+        }
+    }
+
+    // 媒体状态回调
+    virtual void onAudioMediaState(OnAudioMediaStateParam &prm) {
+        AudioMedia *aud_med = nullptr;
+
+        // 获取音频媒体流
+        for(unsigned i = 0; i < prm.medias.size(); i++) {
+            if(prm.medias[i].type == PJMEDIA_TYPE_AUDIO) {
+                aud_med = dynamic_cast<AudioMedia *>(prm.medias[i].media.get());
+                break;
+            }
+        }
+
+        if(aud_med) {
+            // 连接音频设备（需配置音频设备）
+            AudioMedia &play_dev = Endpoint::instance().audDevManager().getPlaybackDevMedia();
+            aud_med->startTransmit(play_dev);
         }
     }
 };
